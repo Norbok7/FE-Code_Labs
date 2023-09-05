@@ -69,7 +69,7 @@
 //   console.log(firstName, lastName,'is', age, 'years old.')
 // }
 // person();
-
+firstName = 'James';
 function lives() {
   let country = 'England';
   let firstName = 'Garrett';
@@ -78,6 +78,9 @@ function lives() {
   console.log(firstName, lastName,'is', age, 'years old', 'and lives in', country)
 }
 lives();
-let firstName = 'James';
+firstName = 'James';
+
+//does not take external information last takes internal last
+
 
 
