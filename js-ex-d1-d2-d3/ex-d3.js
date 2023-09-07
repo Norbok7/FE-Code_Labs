@@ -69,6 +69,7 @@ at();
   // Return a function that makes use of 'param'
   function functionFactory(param) {
     return 
+
   }
 // Create an instance of the inner function by invoking functionFactory with a parameter
 
@@ -78,6 +79,7 @@ at();
 // Declare a variable after a console.log statement 
 // that tries to print that variable. Observe the behavior, 
 // and deduce how JavaScript hoists variable declarations.
+
 // console.log(mouse);
 // let mouse = 'gizmo';
 
@@ -85,38 +87,38 @@ at();
 
 //ex 7 create a funciton that sets up a counter using closures
 //outer funciton should define a count variable
-// the inner function should increment and print the coutn each time
+// the inner function should increment and print the count each time
 // it's invoked
 
-function counter(){
-  let count = 0;
+// function counter(){
+//   let count = 0;
 
-  return {
-    //keys or properties interchangeable
-    increment: function(){
-   count++;
-   return count;
+//   return {
+//     //keys or properties interchangeable
+//     increment: function(){
+//    count++;
+//    return count;
   
-    },
-    decrement: function(){
-      count--;
-      return count;
-    },
-    getCount: function(){
-      return count;
-    }
-  }
-}
-let myCounter = counter();
+//     },
+//     decrement: function(){
+//       count--;
+//       return count;
+//     },
+//     getCount: function(){
+//       return count;
+//     }
+//   }
+// }
+// let myCounter = counter();
 
-console.log(myCounter.getCount());
-myCounter.increment();
-myCounter.increment();
-myCounter.increment();
-myCounter.increment();
-myCounter.increment();
-myCounter.increment();
-console.log(myCounter.getCount());
+
+// myCounter.increment();
+// myCounter.increment();
+// myCounter.increment();
+// myCounter.increment();
+// myCounter.increment();
+// myCounter.increment();
+// console.log(myCounter.getCount());
 
 
 
@@ -125,8 +127,48 @@ console.log(myCounter.getCount());
 // Notice how hoisting affects the behavior when you try to declare and initialize the counter after referencing it.
 // Comment on the role of closure in maintaining the counter's state across multiple invocations of the returned function.
 
-counterTwo(){
-let counted = 10;
-for (let i = 0; i < 10; i++)
+
+function counter(){
+  let currentValue = 10;
+
+  return function(val){
+    currentValue += val;
+    return currentValue;
+  }  
 }
-  counterTwo();
+
+// create a counter and increment by one
+let c = counter()
+console.log(c(1))
+console.log(c(1))
+console.log(c(1))
+
+// create a new counter and increment it by 2
+let e = counter()
+console.log(e(2))
+console.log(e(2))
+console.log(e(2))
+
+//ex 9 
+// Define two functions: one that modifies a global 
+// variable and another that tries to modify a local 
+// variable (which is not yet declared).
+  a=2
+function varA(a){
+a=3;
+console.log(a);}
+
+function varB(b){
+b=2;
+b=5;
+console.log(b);}
+varA();
+varB();
+//p2 Inside the second function, declare and initialize the local variable after attempting to modify it.
+// Observe how hoisting comes into play.
+// p3 Now, make use of closures: Modify the first function so that it becomes a factory function returning 
+//another function. This inner function should use the outer function's variables.
+//p4 Reflect on how the local scope of the outer function is preserved for the inner function through closures,
+// even after the outer function has finished execution.
+
+//functions execute from outside of the outter function inwards to smallest function
