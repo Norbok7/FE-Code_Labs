@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "FE-Code_Labs",
+			"path": "../../.."
+		},
+		{
+			"name": "java-basics",
+			"path": "../../../../java-basics"
+		},
+		{
+			"name": "java vid practice",
+			"path": "../../../../java vid practice"
+		},
+		{
+			"name": "CL HTML-STYLES",
+			"path": "../../../../CL HTML-STYLES"
+		}
+	],
+	"settings": {}
+}
