@@ -67,6 +67,9 @@ console.log(guy, girl);
 //come back to this one
 
 ///ex. 6////////
+///ex.7////////
+
+
 
 
 

@@ -94,7 +94,7 @@ switch(favFood) {
 }
 ///////////////video 24
 ////ternary operator easier way to check true false like if else statements did
-let age = 17;
+let age = 19;
 if(age>= 18) {
   console.log('you can vote' );
 
