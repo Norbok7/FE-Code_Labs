@@ -20,7 +20,7 @@ async function fetchPosts(){
  } catch (error) {
 console.log('error', error)
  }
-
+}
   // add to webpage
 
 
