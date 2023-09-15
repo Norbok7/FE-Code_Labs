@@ -32,25 +32,41 @@ class Person  {
   this.age = age;
   }
 //step 2. Add a method greet() to this class which outputs a greeting.
+static info(){
+  return console.log('this is a person class')
+}
 greet() {
   console.log(`Hello! my name is ${this.name} I am ${this.age}`)
   }
+  get newAge() {
+		return this.age;
+    
+	}
+
+	set newAge(age) {
+    this.push(age);
+    console.log('new age set');
+  }
+
+	}
   
-static info(){
-  return 'this is a person class'
-}
 
 
-}
+
 
 //step 3. Instantiate two different Person objects and invoke their greet methods.
 //instantiate refers to using a class typically
 const bio = new Person('joe', 24);
 const bioTwo = new Person('sarah', 22); // person objects instatiated from a class
+
 bio.greet();
 bioTwo.greet();
-console.log(bio.info);
+
+
 console.log(bio);
+Person.info() //returns when called outside of class
+//Person.set.newAge();
+ ///can not call inside of class
 
     //come back to this problem
     ////////////ex. 3////////////////
@@ -62,10 +78,78 @@ console.log(bio);
 // static in class says SyntaxError: Unexpected strict mode reserved word
 // in outside of instance class it is fine
 ///////////ex.5//////////
-//come back to this one
-
+//GET HELP WITH THIS PROBLEM
 ///ex. 6////////
+//GET WALKTHROUGH
 ///ex.7////////
+class Library {
+  constructor(){
+    this.books = []};
+addBook(book){
+this.books.push(book);
+console.log('book added');
+};
+removeBook(book){
+this.books = this.books.filter((bk) => (bk) !== books);
+console.log('book removed');
+};
+listBookReturned(){
+this.books.forEach((book) => 
+book.update());
+};
+  }
+
+  class Book {
+
+    #isbn
+    constructor (isbn, title, author, yearPublished){
+  this.isbn = isbn,
+  this.title = title,
+  this.author = author,
+  this.yearPublished = yearPublished;
+     
+    }
+    update(data) {
+      console.log('books updated');
+    }
+  }
+
+const library = new Library;
+const book = new Book;
+library.addBook(book);
+library.addBook(book);
+library.listBookReturned();
+
+//ex 8
+class Studentz {
+  constructor(names, grades){
+    this.names = names
+    this.grades = grades
+  }
+  
+  addGrades(name, grade){
+this.grades.push(grade)
+  };
+  avgGrades(){
+    let sum = 0;
+    for(let i = 0; i<grade.length; i++) {
+      sum += grade[i]}
+   return  sum/grade.length
+
+    }
+  }
+const studentz = new Studentz;
+const A = grade;
+const B = grade;
+const C = grade;
+
+studentz.grades(A);
+
+
+
+
+
+
 
 
 
