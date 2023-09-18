@@ -1,0 +1,21 @@
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+}
+footer{
+  margin-top: auto;
+}
+.jumbotron {
+  background-color: rgba(173, 216, 230, 0.504);
+}
+
+.btn-group{  margin: 0;
+  position: relative;
+  top: 15%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
