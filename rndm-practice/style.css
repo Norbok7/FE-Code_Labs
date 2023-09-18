@@ -3,7 +3,7 @@ body{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  background-color: rgba(173, 216, 230, 0.504);
 }
 footer{
   margin-top: auto;
@@ -18,4 +18,9 @@ footer{
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  background-color: lightgreen;
+};
+
+.footer{ 
+  background-color: rgba(173, 216, 230, 0.504);
 }

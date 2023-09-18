@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn  btn_inline" onclick="changeBgToRandom()">Button 1</button>
+  <button class="btn2 btn_inline" onclick="changeBgToRandom()">Button 2</button>
+  <button class="btn3 btn_inline" onclick="changeBgToRandom()">Button 3</button>
+  
+<button class="'btn4 btn_inline" onclick="notifyUser()">Click me </button>  
+
+<script>
+   const javascriptMultipleButtons = document.querySelectorAll('.btn_onclick');
+
+
+
+
+javascriptMultipleButtons.forEach((button) => {
+	button.onclick = function () {
+		document.body.style.backgroundColor = 'randomColor';
+	};
+});
+
+// * FUNCTIONS *\\
+//OUTPUT: Change Background Color
+function changeBgToRandom() {
+	const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+	document.body.style.backgroundColor = `#${randomColor}`;
+}
+
+const eventListenerButton = document.querySelector('.btn_event-listener');
+eventListenerButton.addEventListener('click', changeBgToRandom);
+eventListenerButton.addEventListener('mouseenter', changeBgToRandom);
+
+//*APPLICATION START *\\
+changeBgToRandom('black');
+
+///ex 4
+// const newElement = document.createBtn(button);
+// newElement.innerHTML = 'click me';
+// document.body.appendchild()
+// function addNewElement() {
+//   const newElement = document.createBtn('button');
+//   newButton.innerHTML = 'click me'
+//   document.body.appendChild(newElement);
+// }
+//         addNewElement();
+  </script>
+  
+</body>
+</html>
