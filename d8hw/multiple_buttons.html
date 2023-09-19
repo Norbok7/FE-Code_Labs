@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>multiple buttons
+  </title>
 </head>
 <body>
   <button class="btn  btn_inline" onclick="changeBgToRandom()">Button 1</button>
   <button class="btn2 btn_inline" onclick="changeBgToRandom()">Button 2</button>
   <button class="btn3 btn_inline" onclick="changeBgToRandom()">Button 3</button>
   
-<button class="'btn4 btn_inline" onclick="notifyUser()">Click me </button>  
+ 
 
+  <input type="text" id="textInput" />
+  <p id="textDisplay"></p>
+  <div id="div1">
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
+  </div>
+
+  <ul id="itemList" class="itemListTwo"></ul>
+<!-- ordered list creates the numbers, and unordered list creates the bullets -->
+  <!-- <ul>
+    <li>pizza</li>
+    <li>pizza</li>
+    <li>pizza</li>
+  </ul> -->
 <script>
-   const javascriptMultipleButtons = document.querySelectorAll('.btn_onclick');
-
-
-
-
-javascriptMultipleButtons.forEach((button) => {
-	button.onclick = function () {
-		document.body.style.backgroundColor = 'randomColor';
-	};
-});
-
-// * FUNCTIONS *\\
+  // * FUNCTIONS *\\
 //OUTPUT: Change Background Color
 function changeBgToRandom() {
 	const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -32,23 +36,78 @@ function changeBgToRandom() {
 	document.body.style.backgroundColor = `#${randomColor}`;
 }
 
-const eventListenerButton = document.querySelector('.btn_event-listener');
-eventListenerButton.addEventListener('click', changeBgToRandom);
-eventListenerButton.addEventListener('mouseenter', changeBgToRandom);
+// const eventListenerButton = document.querySelector('.btn_event-listener');
+// eventListenerButton.addEventListener('click', changeBgToRandom);
+// eventListenerButton.addEventListener('mouseenter', changeBgToRandom);
 
 //*APPLICATION START *\\
-changeBgToRandom('black');
+changeBgToRandom();
 
-///ex 4
-// const newElement = document.createBtn(button);
-// newElement.innerHTML = 'click me';
-// document.body.appendchild()
-// function addNewElement() {
-//   const newElement = document.createBtn('button');
-//   newButton.innerHTML = 'click me'
-//   document.body.appendChild(newElement);
-// }
-//         addNewElement();
+
+
+///////////////////////////ex 4
+
+const button = document.createElement("button");
+button.textContent = 'click me';
+document.body.appendChild(button);  ///button not in quotes because its referring to the javascript
+button.addEventListener('click', () => {
+  alert('you click the button');
+})
+
+
+
+        ///////ask how to append child???>?>?>?>>?
+
+/////////////////////////ex 5
+//add event listener to log every keypress made by the user
+document.addEventListener('keydown', (event) => {
+  var name = event.key;
+  var code = event.code;
+  alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+  const para = document.createElement("p");
+  const node = document.createTextNode(`${name}${code}`);
+  para.appendChild(node);
+  const element = document.getElementById("div1");
+  element.appendChild(para);
+}, false);
+
+/////////////////////ex 6
+//Loop through the provided list of items.
+
+const items = [
+        {name: 'Item 1'},
+        {name: 'Item 2'},
+        {name: 'Item 3'},
+        {name: 'Item 4'}
+    ];
+
+const itemsList = document.getElementById("itemList");
+const itemsListTwo = document.querySelector('.itemListTwo');
+
+for(const i of items){
+  const li = document.createElement("li");
+  li.textContent = i.name;
+
+if(i.index % 2 === 0){
+  li.style.backgroundColor = "gray";
+}
+
+itemsListTwo.appendChild(li);
+}
+/// how do i get it from saying object object to list names
+
+
+
+
+//display the current content of the input in a seperate paragraph below the input every time the user types. 
+//////////////ask how to add content into seperate paragraph below
+
+//////////////////////ex 6
+///loop through the provided list of items
+
+////for each item create a new li element, set its text to the item's name, and append it to the provided ul.
+
+// ensure that the background color of every even item is gray.
   </script>
   
 </body>
