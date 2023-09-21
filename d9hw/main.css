@@ -1,0 +1,31 @@
+.item-description {
+  padding: 5px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.item-completed:checked + .item-description {
+  background: gray;
+  text-decoration: line-through;
+}
+
+#add {
+  padding: 8px 14px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #009578;
+  cursor: pointer;
+}
+
+#remove {
+
+    padding: 2px 4px;
+    font-weight: bold;
+    font-size: 5px;
+    color: #ffffff;
+    background: rgba(131, 21, 21, 0.755);
+    cursor: pointer;
+    float: right;
+    
+  
+}
