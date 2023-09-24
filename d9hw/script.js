@@ -31,13 +31,16 @@ function addItem() {
 }
 
 function removeItem() {
-  items.splice({   // pop removes last element or shift removes the first
-    description: '',
-    completed: false
-  });
-    setItems(items);
-    refreshList();
+const filteredArr = [];
+for(let i = 0; i < items.length; i++){
+ if(items[i] !== 3){
+  filteredArr.push(items[i])
+  
+ }
+} 
   }
+  
+  console.log(filteredArr);
 
   
 
@@ -89,9 +92,9 @@ ADD_BUTTON.addEventListener('click', () => {
 });
 
 
-REMOVE_BUTTON.addEventListener('click', () =>{
-  removeItem();
-});
+// REMOVE_BUTTON.addEventListener('click', () =>{
+//   removeItem();
+// });
 
 function updateItem(item, key, value) {
   item[key]= value; //this works dont need to access array, bc set items finds it
@@ -108,8 +111,8 @@ function updateItem(item, key, value) {
 
 
 
-{/* <div class="item">
+/* <div class="item">
 <input type="checkbox" class="item-completed">
 <input type="text" class="item-description" placeholder='to-Do item...'>
 
-</div> */}
+</div> */
